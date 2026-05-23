@@ -9,6 +9,7 @@ import path from "path";
 
 const app = express();
 const port = process.env.PORT;
+const __dirname = path.resolve();
 
 app.use(cors());
 app.use(express.json());

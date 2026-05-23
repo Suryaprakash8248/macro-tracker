@@ -8,6 +8,7 @@
     "build":"npm i --prefix backend && npm i --prefix frontend/vite-project && npm run build --prefix frontend/vite-project",
     "start":"npm run start --prefix backend"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Suryaprakash8248/macro-tracker.git"
