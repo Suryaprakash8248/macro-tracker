@@ -19,12 +19,7 @@ function Homepage() {
     ));
   }
 
-  function handleLogOut() {
-    if(window.confirm("Are you sure to logout?")) {
-      navigate("/");
-      toast.success("logged out successfully")
-    }
-  }
+  
 
   useEffect(()=>{
     const fetchMacros = async()=> {
@@ -58,7 +53,7 @@ function Homepage() {
 
       <div className=' h-10 hidden '>
         <h2 className='' >Welcome {user.username}!</h2>
-        <button onClick={handleLogOut} className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl shadow-md transition">
+        <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-xl shadow-md transition">
             logout
           </button>
       </div>

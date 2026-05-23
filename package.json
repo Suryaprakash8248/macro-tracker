@@ -1,0 +1,22 @@
+{
+  "name": "macro-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"npm i --prefix backend && npm i --prefix frontend/vite-project && npm run build --prefix frontend/vite-project",
+    "start":"npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suryaprakash8248/macro-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Suryaprakash8248/macro-tracker/issues"
+  },
+  "homepage": "https://github.com/Suryaprakash8248/macro-tracker#readme"
+}

@@ -5,6 +5,7 @@ import cors from "cors";
 
 import connectDb from "./config/db.js";
 import router from "./routers/router.js";
+import path from "path";
 
 const app = express();
 const port = process.env.PORT;
@@ -12,7 +13,11 @@ const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use("/api/macros/", router);
+app.use(express.static(path.join(__dirname, "../frontend/vite-project/dist")));
 
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/vite-project/dist/index.html"));
+});
 
 
 
