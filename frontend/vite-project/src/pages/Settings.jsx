@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
 function Settings() {
   const navigate = useNavigate();
+  const [darkmode, setDarkmode] = useState(false);
   
   function handleLogOut() {
       if(window.confirm("Are you sure to logout?")) {
         navigate("/");
         toast.success("logged out successfully")
       }
+    };
+
+     const toggleTheme = ()=> {
+    document.documentElement.classList.toggle("dark");
+
+    if(document.documentElement.classList.contains("dark")) {
+      localStorage.theme = "dark"
+    } else {
+      localStorage.theme = "light"
     }
+  };
+
+   useEffect(()=> {
+    if(localStorage.theme === "dark") {
+      document.documentElement.classList.add('dark');
+    }
+  },[])
 
   return (
     <div>
@@ -29,9 +46,18 @@ function Settings() {
           <div className='my-5 px-2 py-2 border-solid border-4 border-black md:text-center hover:bg-gray-700 hover:text-white'>
           Account Details
         </div>
-        <div className='my-5 px-2 py-2 border-solid border-4 border-black md:text-center hover:bg-gray-700 hover:text-white'>
+        <div className='my-5 px-2 py-2 border-solid border-4 border-black md:text-center hover:bg-gray-700 hover:text-white flex justify-around'>
           Theme
+           <button onClick={()=>toggleTheme()} className={`w-16 h-8 flex items-center rounded-full p-1 transition-colors duration-300
+              ${darkmode ? "bg-green-500" : "bg-gray-400"}`}
+            >
+            <div
+            className={`bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-300
+            ${darkmode ? "translate-x-8" : "translate-x-0"}`}
+          />
+            </button>
         </div>
+
         <div onClick={handleLogOut}  className='my-5 px-2 py-2 border-solid border-4 border-black md:text-center hover:bg-gray-700 hover:text-white'>
           LogOut
         </div>

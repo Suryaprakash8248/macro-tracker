@@ -18,14 +18,14 @@ function Macrocard({macro,onDelete}) {
     }
   }
   return (
-  <div className="bg-white rounded-2xl shadow-md p-5 hover:shadow-lg transition flex flex-col justify-between">
+  <div className="bg-white rounded-2xl shadow-md p-5 hover:shadow-lg transition flex flex-col justify-between duration-100 dark:bg-gray-800">
 
     <div>
-      <h2 className="text-xl font-semibold text-orange-600 mb-2">
+      <h2 className="text-xl font-semibold text-orange-600 mb-2 dark:text-green-600">
         {macro.foodname} 🍽️
       </h2>
 
-      <div className="space-y-1 text-gray-700 text-sm">
+      <div className="space-y-1 text-gray-700 text-sm dark:text-white">
         <p>🍚 Quantity: {macro.quantity}</p>
         <p>🔥 Calories: {macro.calorie}</p>
         <p>💪 Protein: {macro.protein}g</p>
@@ -37,14 +37,14 @@ function Macrocard({macro,onDelete}) {
     {/* Actions */}
     <div className="flex justify-between mt-4">
       <Link to={`/updatemacro/${id}`}>
-        <button className="bg-orange-400 hover:bg-orange-500 text-white px-4 py-1 rounded-lg text-sm">
+        <button className="bg-green-500 hover:bg-orange-500 font-bold text-white px-4 py-1 rounded-lg text-sm dark:bg-green-800">
           Edit
         </button>
       </Link>
 
       <button
         onClick={handleDelete}
-        className="bg-red-400 hover:bg-red-500 text-white px-4 py-1 rounded-lg text-sm"
+        className="bg-red-600 hover:bg-red-500 font-bold text-white px-4 py-1 rounded-lg text-sm dark:bg-red-900 dark:hover:bg-red-800"
       >
         Delete
       </button>
